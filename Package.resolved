@@ -2,30 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "DangerSwiftCoverage",
-        "repositoryURL": "https://github.com/f-meloni/danger-swift-coverage.git",
-        "state": {
-          "branch": null,
-          "revision": "6a21a6e595e2b13443428942ce128b3ba6b827ee",
-          "version": "1.2.1"
-        }
-      },
-      {
         "package": "DangerXCodeSummary",
         "repositoryURL": "https://github.com/f-meloni/danger-swift-xcodesummary",
         "state": {
           "branch": null,
           "revision": "289d5136cead3d4b1eae509acc3f0b044252fc6c",
           "version": "1.2.1"
-        }
-      },
-      {
-        "package": "DangerSwiftPeriphery",
-        "repositoryURL": "https://github.com/leoniralves/DangerSwiftPeriphery.git",
-        "state": {
-          "branch": "issue-01",
-          "revision": "83d609099e61bb3d4b51e2d9626e6c591570b50b",
-          "version": null
         }
       },
       {
