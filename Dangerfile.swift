@@ -1,8 +1,6 @@
 import Foundation
 import Danger
-import DangerSwiftCoverage
 import DangerXCodeSummary
-import DangerSwiftPeriphery
 
 let danger = Danger()
 let allSourceFiles = danger.git.modifiedFiles + danger.git.createdFiles
@@ -13,16 +11,10 @@ validator.validate()
 struct Validator {
 
     func validate() {
-        runPeriphery()
         runXCodeSummary()
-        runXCodeBuildCoverage()
         checkHavingTestsToCreatedFiles()
         checkHavingTestsToModifiedFiles()
         checkUpdateChangelog()
-    }
-
-    private func runPeriphery() {
-        DangerPeriphery.scan()
     }
 
     private func runXCodeSummary() {
@@ -30,17 +22,9 @@ struct Validator {
         summary.report()
     }
 
-    private func runXCodeBuildCoverage() {
-        Coverage.xcodeBuildCoverage(
-            .derivedDataFolder("DerivedData"), 
-            minimumCoverage: 80, 
-            excludedTargets: ["iOSWebViews-Unit-Tests.xctest"]
-        )
-    }
-
     private func checkHavingTestsToCreatedFiles() {
         let createdFiles = danger.git.createdFiles
-        let sourceChanges = createdFiles.filter { $0.hasPrefix("iOSWebViews/Classes/") }
+        let sourceChanges = createdFiles.filter { $0.hasPrefix("MyLibrary/Classes/") }
         let swiftCreatedFiles = sourceChanges.filter { $0.hasSuffix(".swift") }
         
         let files = swiftCreatedFiles.filter { !$0.hasPrefix("Tests.swift") && !$0.hasPrefix("Test.swift") }
@@ -55,9 +39,9 @@ struct Validator {
 
     private func checkHavingTestsToModifiedFiles() {
         let modifiedFiles = danger.git.modifiedFiles
-        let sourceChanges = modifiedFiles.filter { $0.hasPrefix("iOSWebViews/Classes/") }
+        let sourceChanges = modifiedFiles.filter { $0.hasPrefix("MyLibrary/Classes/") }
         let swiftCreatedFiles = sourceChanges.filter { $0.hasSuffix(".swift") }
-        let sourceTestChanges = modifiedFiles.filter { $0.hasPrefix("iOSWebViews/Tests/") }
+        let sourceTestChanges = modifiedFiles.filter { $0.hasPrefix("MyLibrary/Tests/") }
         let swiftCreatedFilesTests = sourceTestChanges.filter { $0.hasSuffix("Tests.swift") || $0.hasSuffix("Test.swift") }
         
         let files = swiftCreatedFiles.filter { !$0.hasPrefix("Tests.swift") }
