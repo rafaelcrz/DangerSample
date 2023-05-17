@@ -24,8 +24,15 @@
 
   ],
   "tests_failures": {
+    "MyLibrary_Unit_Tests.PodTests": [
+      {
+        "file_path": "/Users/rafaelramos/Documents/Ads_Squad/MyLibrary/Tests/PodTests.swift:21",
+        "reason": "XCTAssertEqual failed: (\"1\") is not equal to (\"9\")",
+        "test_case": "test_pods"
+      }
+    ]
   },
   "tests_summary_messages": [
-
+    "\t Executed 1 test, with 1 failure (0 unexpected) in 0.070 (0.071) seconds\n"
   ]
 }
