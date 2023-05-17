@@ -22,7 +22,7 @@ jobs:
 
       - uses: webfactory/ssh-agent@v0.5.4
         with:
-          ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Cocoapods
         run: pod install --project-directory=Example
