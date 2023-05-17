@@ -1,0 +1,57 @@
+name: "Danger Swift"
+
+on:
+  pull_request:
+
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    env:
+          GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          HOMEBREW_NO_AUTO_UPDATE: 1
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_NETSHOES_CI_PRIVATE_KEY }}
+    name: "Danger"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
+
+      - name: Cocoapods
+        run: pod install --project-directory=Example
+
+      - name: ruby setup
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+            
+      - name: Run tests
+        run: xcodebuild clean test -scheme MyLibrary -workspace Example/MyLibrary.xcworkspace -destination 'platform=iOS Simulator,OS=15.2,name=iPhone 12 Pro' -derivedDataPath DerivedData/ -enableCodeCoverage YES | XCPRETTY_JSON_FILE_OUTPUT=result.json bundle exec xcpretty -f `bundle exec xcpretty-json-formatter`
+
+      - name: Install Danger
+        run: npm install -g danger
+
+      - uses: actions/cache@v3
+        id: spm-cache
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+      
+#       - name: Swift Package Manager
+#         if: steps.spm-cache.outputs.cache-hit != 'true'
+#         run: |
+#           swift package update
+#           swift build --target DangerDependencies
+      
+      - name: Run Danger-Swift
+        run: swift run danger-swift ci
