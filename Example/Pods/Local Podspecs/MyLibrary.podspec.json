@@ -1,0 +1,22 @@
+{
+  "name": "MyLibrary",
+  "version": "0.1.0",
+  "summary": "A short description of MyLibrary.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Rafael Felipe/MyLibrary",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rafael Felipe": "rafael.felipe1989@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Rafael Felipe/MyLibrary.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "MyLibrary/Classes/**/*"
+}
