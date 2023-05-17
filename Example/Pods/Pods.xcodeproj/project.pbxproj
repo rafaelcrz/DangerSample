@@ -199,7 +199,8 @@
 			children = (
 				92FB8CB72A155EAF0089BE30 /* PodTests.swift */,
 			);
-			path = Tests;
+			name = Tests;
+			path = MyLibrary/Tests;
 			sourceTree = "<group>";
 		};
 		B9728E95850C992852768869F8839D87 /* Pods-MyLibrary_Example */ = {
