@@ -18,5 +18,12 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "MyLibrary/Classes/**/*"
+  "source_files": "MyLibrary/Classes/**/*",
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "MyLibrary/Tests/**/*"
+    }
+  ]
 }

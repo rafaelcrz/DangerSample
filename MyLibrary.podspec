@@ -31,6 +31,10 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'MyLibrary/Classes/**/*'
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'MyLibrary/Tests/**/*'
+  end
   
   # s.resource_bundles = {
   #   'MyLibrary' => ['MyLibrary/Assets/*.png']
