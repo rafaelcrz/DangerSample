@@ -13,7 +13,7 @@ jobs:
     env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
           HOMEBREW_NO_AUTO_UPDATE: 1
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_NETSHOES_CI_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_LIBRARY_CI_PRIVATE_KEY }}
     name: "Danger"
     steps:
       - uses: actions/checkout@v2
