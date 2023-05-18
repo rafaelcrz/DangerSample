@@ -36,10 +36,11 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
           fallback: v0.0.2
-          
+
     name: "NOME B"
     steps:
-      run: echo "❤️ Hello World"
+      - name: Mensagem
+        run: echo "❤️ Hello World"
 
       # - name: Attach ZIP to latest release
       #   - run: echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
