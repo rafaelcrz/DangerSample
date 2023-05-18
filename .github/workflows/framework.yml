@@ -18,7 +18,6 @@ jobs:
     name: "NOME A"
     steps:
       - uses: actions/checkout@v3
-      - run: fastlane beta
         with:
           fetch-depth: 0
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
