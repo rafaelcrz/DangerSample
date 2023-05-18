@@ -29,5 +29,5 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
             
-      - name: Run tests
+      - name: Build simulator debug xcarchive
         run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS Simulator" -configuration Debug -archivePath "archives/MyLibrary.framework-iphone-simulator-debug.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
