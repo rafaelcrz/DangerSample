@@ -1,9 +1,6 @@
-name: "Framework Artfactory"
+name: "Attach .xcframework file"
 
-on:
-  push:
-    tags:
-      - v*
+on: workflow_dispatch
 
 concurrency: 
   group: ${{ github.ref }}
