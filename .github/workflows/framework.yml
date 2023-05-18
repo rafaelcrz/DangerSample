@@ -17,26 +17,29 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Cocoapods
-        run: pod install --project-directory=Example
+      # - name: Cocoapods
+      #   run: pod install --project-directory=Example
 
-      - name: ruby setup
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-          bundler-cache: true
+      # - name: ruby setup
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.7
+      #     bundler-cache: true
 
       - name: Build device release archive
         run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
       
       - name: Build device release xcframework
-        run: xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
+        run: |
+          xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
+          cd /Users/runner/work/DangerSample/DangerSample/Archives/xcframeworks/MyLibrary.xcframework
+          ls -all
 
-      - name: Create MyLibrary.xcframework.zip
-        run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
+      # - name: Create MyLibrary.xcframework.zip
+      #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
-      - name: Attach ZIP to latest release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: MyLibrary.xcframework.zip
+      # - name: Attach ZIP to latest release
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: MyLibrary.xcframework.zip
