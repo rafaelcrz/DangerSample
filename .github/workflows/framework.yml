@@ -50,8 +50,8 @@ jobs:
       - name: Tag
         # if: startsWith(github.ref, 'refs/heads/release/')
         run: |
-          git tag "v$env:GitVersion_SemVer"
-          git push origin "v$env:GitVersion_SemVer"
+          git tag "v$steps.gitversion.outputs.GitVersion_SemVer"
+          git push origin "v$steps.gitversion.outputs.GitVersion_SemVer"
 
       # - name: Attach ZIP to latest release
       #   uses: softprops/action-gh-release@v1
