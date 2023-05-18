@@ -35,5 +35,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          tag_name: ${{steps.previoustag.outputs.tag}}
+          tag_name: v0.0.2
           files: Archives/MyLibrary.xcframework.zip
