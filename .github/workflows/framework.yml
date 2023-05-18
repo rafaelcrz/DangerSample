@@ -37,3 +37,6 @@ jobs:
 
       - name: Create MyLibrary.xcframework.zip
         run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
+
+      - name: Attach ZIP to latest release
+        run: ghr -replace $(git describe -tags --abbrev=0) MyLibrary.xcframework.zip
