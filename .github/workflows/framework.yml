@@ -25,8 +25,15 @@ jobs:
       - name: Create MyLibrary.xcframework.zip
         run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
+      - name: 'Get Previous tag'
+        id: previous_tag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: v0.0.2
+
       - name: Attach ZIP to latest release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          tag_name: ${{steps.previous_tag.outputs.tag}}
           files: Archives/MyLibrary.xcframework.zip
