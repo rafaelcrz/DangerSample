@@ -26,14 +26,13 @@ jobs:
       #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
       - name: Get Previous tag
-        id: previous_tag
+        id: previoustag
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
         with:
           fallback: v0.0.2
 
       - name: Show previus tag
         run: |
-          echo ${{steps.previoustag.outputs.tag}}
           cd Archives
           ls
 
