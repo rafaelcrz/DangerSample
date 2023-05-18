@@ -32,7 +32,7 @@ jobs:
       - name: Build device release xcframework
         run: |
           xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
-          cd /Users/runner/work/DangerSample/DangerSample/Archives/xcframeworks/MyLibrary.xcframework
+          cd /Users/runner/work/DangerSample/DangerSample/Archives/xcframeworks
           ls -all
 
       # - name: Create MyLibrary.xcframework.zip
