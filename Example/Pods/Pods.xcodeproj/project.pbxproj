@@ -50,13 +50,13 @@
 		1408DC94FBE042BB4527399503553D64 /* Pods-MyLibrary_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MyLibrary_Tests.modulemap"; sourceTree = "<group>"; };
 		1ED6735E24CE785F7224185BD4FA152C /* MyLibrary.unit-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MyLibrary.unit-tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F9A5082A7F882FF0B350FF3DE554D16 /* Pods-MyLibrary_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyLibrary_Example-frameworks.sh"; sourceTree = "<group>"; };
-		26D6D29573474A8C38A1F6597877D1BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		26D6D29573474A8C38A1F6597877D1BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2E568AB6E6B11EED5DA3D8687477830F /* Pods-MyLibrary_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyLibrary_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		32B58268D3C03E7A333260004C05F258 /* Pods-MyLibrary_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MyLibrary_Example.modulemap"; sourceTree = "<group>"; };
 		3B8C3BEC79960B58D30CDEA847A3658F /* Pods-MyLibrary_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyLibrary_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3D0092E31D72D767DB44D33C5032AAA0 /* Pods-MyLibrary_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyLibrary_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3D5A7B3C4C088DE7FB328F3765052369 /* MyLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MyLibrary-Info.plist"; sourceTree = "<group>"; };
-		3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "MyLibrary-Unit-Tests"; path = "MyLibrary-Unit-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyLibrary-Unit-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA4D5A9508D2329BA2B6DAC7C536140 /* Pods-MyLibrary_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MyLibrary_Example"; path = Pods_MyLibrary_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44969F1C2C91426A39FBC7C0D6C63BFF /* Pods-MyLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
 		452DD2E7781A3503913DD806CF3F7ED7 /* Pods-MyLibrary_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyLibrary_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,22 +70,22 @@
 		891DD071930950070118AC39390A0D14 /* Pods-MyLibrary_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyLibrary_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8C2CD3599AD7A912660E3600721695FD /* MyLibrary.unit-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MyLibrary.unit-tests.release.xcconfig"; sourceTree = "<group>"; };
 		9C49663EBAC330E325A07D35EC8CE184 /* Pods-MyLibrary_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyLibrary_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB8DB961570F3183931D9A8912ADA53D /* Pods-MyLibrary_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyLibrary_Example-dummy.m"; sourceTree = "<group>"; };
 		AC4C9FE390C9921302F1A73970F28A88 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MyLibrary/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		AE40CD7EA182A33336201DDBFA1EC49B /* MyLibrary-Unit-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MyLibrary-Unit-Tests-frameworks.sh"; sourceTree = "<group>"; };
-		B58D753C52CED5AFE9C8C1B682A6DABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B58D753C52CED5AFE9C8C1B682A6DABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B8A9BFE3A52F7C7D1030AEF5BFD0F65B /* Pods-MyLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CB3A9A50F3B19418A71B5D717AF2D008 /* MyLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-umbrella.h"; sourceTree = "<group>"; };
 		D422BB4150AF6E521E056191CBA8D08B /* PodTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PodTests.swift; path = MyLibrary/Tests/PodTests.swift; sourceTree = "<group>"; };
 		E6709175C5ECF63ABC323D878F505094 /* MyLibrary-Unit-Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MyLibrary-Unit-Tests-Info.plist"; sourceTree = "<group>"; };
-		E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MyLibrary; path = MyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92AD8F579B1D2590C72B40D8F37456F /* MyLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-prefix.pch"; sourceTree = "<group>"; };
 		EB8EFD6C81FE5F1AA40303F48060661E /* Pods-MyLibrary_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyLibrary_Example-umbrella.h"; sourceTree = "<group>"; };
 		EE77395385DAE524A6A20939A6899521 /* Pods-MyLibrary_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MyLibrary_Tests"; path = Pods_MyLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB636A0486301799D863B494F13269A /* Pods-MyLibrary_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyLibrary_Tests-Info.plist"; sourceTree = "<group>"; };
 		F9D91244342A47755AFBC1D68967D131 /* MyLibrary-Unit-Tests-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-Unit-Tests-prefix.pch"; sourceTree = "<group>"; };
-		FEBA8BE0808F661110826C28F8931CCE /* MyLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MyLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FEBA8BE0808F661110826C28F8931CCE /* MyLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MyLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +168,8 @@
 		A67183A6791B2E113EDE841271691D03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary */,
-				3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests */,
+				E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary.framework */,
+				3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests.xctest */,
 				3FA4D5A9508D2329BA2B6DAC7C536140 /* Pods-MyLibrary_Example */,
 				EE77395385DAE524A6A20939A6899521 /* Pods-MyLibrary_Tests */,
 			);
@@ -308,7 +308,7 @@
 			);
 			name = "MyLibrary-Unit-Tests";
 			productName = "MyLibrary-Unit-Tests";
-			productReference = 3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests */;
+			productReference = 3ED4FFEE990407FBF30F90045A6F455C /* MyLibrary-Unit-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		35C107FBC8268DDD79E6F2CF02D64541 /* Pods-MyLibrary_Example */ = {
@@ -364,7 +364,7 @@
 			);
 			name = MyLibrary;
 			productName = MyLibrary;
-			productReference = E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary */;
+			productReference = E744E74B8C22D0DBD237AE5C166ED50A /* MyLibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -728,7 +728,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MyLibrary/MyLibrary-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MyLibrary/MyLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MyLibrary/MyLibrary.modulemap";
 				PRODUCT_MODULE_NAME = MyLibrary;
@@ -760,7 +760,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MyLibrary/MyLibrary-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MyLibrary/MyLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MyLibrary/MyLibrary.modulemap";
 				PRODUCT_MODULE_NAME = MyLibrary;
@@ -831,8 +831,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -853,7 +852,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MyLibrary/MyLibrary-Unit-Tests-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MyLibrary/MyLibrary-Unit-Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "MyLibrary-Unit-Tests";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -876,7 +875,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MyLibrary/MyLibrary-Unit-Tests-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MyLibrary/MyLibrary-Unit-Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "MyLibrary-Unit-Tests";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
