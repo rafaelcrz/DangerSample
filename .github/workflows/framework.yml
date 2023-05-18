@@ -16,14 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Build device release archive
-        run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+      # - name: Build device release archive
+      #   run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
       
-      - name: Build device release xcframework
-        run: xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
+      # - name: Build device release xcframework
+      #   run: xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
 
-      - name: Create MyLibrary.xcframework.zip
-        run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
+      # - name: Create MyLibrary.xcframework.zip
+      #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
       - name: 'Get Previous tag'
         id: previous_tag
@@ -36,4 +36,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           tag_name: v0.0.2
-          files: Archives/MyLibrary.xcframework.zip
+          files: Archives/dummy.txt
