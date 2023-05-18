@@ -3,7 +3,7 @@ name: "Attach .xcframework file"
 on: workflow_dispatch
 
 permissions:
-  actions: write
+  contents: write
 
 concurrency: 
   group: ${{ github.ref }}
