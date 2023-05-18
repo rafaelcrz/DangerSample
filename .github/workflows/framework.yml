@@ -27,5 +27,6 @@ jobs:
 
       - name: Attach ZIP to latest release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/release/')
         with:
           files: Archives/MyLibrary.xcframework.zip
