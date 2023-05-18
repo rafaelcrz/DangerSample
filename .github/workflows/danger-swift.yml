@@ -47,11 +47,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-spm-
       
-#       - name: Swift Package Manager
-#         if: steps.spm-cache.outputs.cache-hit != 'true'
-#         run: |
-#           swift package update
-#           swift build --target DangerDependencies
+      - name: Swift Package Manager
+        if: steps.spm-cache.outputs.cache-hit != 'true'
+        run: |
+          swift package update
+          swift build --target DangerDependencies
       
       - name: Run Danger-Swift
         run: swift run danger-swift ci
