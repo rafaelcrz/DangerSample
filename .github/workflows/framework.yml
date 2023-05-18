@@ -9,6 +9,9 @@ concurrency:
 jobs:
   build:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: Archives
     env:
           HOMEBREW_NO_AUTO_UPDATE: 1
     name: "Generate Framework"
