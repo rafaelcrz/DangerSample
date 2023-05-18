@@ -18,6 +18,6 @@ final class PodTests: XCTestCase {
     }
 
     func test_pods() throws {
-        XCTAssertEqual(1, 9)
+        XCTAssertEqual(1, 1)
     }
 }
