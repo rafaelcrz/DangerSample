@@ -33,7 +33,7 @@ jobs:
         run: |
           xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
           cd /Users/runner/work/DangerSample/DangerSample/Archives/xcframeworks
-          ls -all
+          ls
 
       # - name: Create MyLibrary.xcframework.zip
       #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
