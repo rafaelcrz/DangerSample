@@ -34,5 +34,6 @@ jobs:
       - name: Attach ZIP to latest release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: test
           files: Archives/dummy.txt
           token: ${{ secrets.GITHUB_TOKEN }}
