@@ -3,11 +3,10 @@ use_frameworks!
 platform :ios, '13.0'
 
 target 'MyLibrary_Example' do
-  pod 'MyLibrary', :path => '../'
+  pod 'MyLibrary', :path => '../', :testspecs => ['Tests']
 
   target 'MyLibrary_Tests' do
     inherit! :search_paths
-
     
   end
 end
