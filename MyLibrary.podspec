@@ -28,9 +28,13 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Rafael Felipe/MyLibrary.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'MyLibrary/Classes/**/*'
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'MyLibrary/Tests/**/*'
+  end
   
   # s.resource_bundles = {
   #   'MyLibrary' => ['MyLibrary/Assets/*.png']
