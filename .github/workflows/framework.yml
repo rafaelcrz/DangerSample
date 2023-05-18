@@ -19,6 +19,7 @@ jobs:
 
       - name: Check out repository code
       - uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: Build device release archive
         run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
