@@ -2,6 +2,9 @@ name: "Attach .xcframework file"
 
 on: workflow_dispatch
 
+permissions:
+  actions: write
+
 concurrency: 
   group: ${{ github.ref }}
   cancel-in-progress: true
@@ -33,8 +36,6 @@ jobs:
 
       - name: Attach ZIP to latest release
         uses: softprops/action-gh-release@v1
-        permissions:
-          actions: write
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
