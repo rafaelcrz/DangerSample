@@ -1,24 +1,26 @@
 name: Generate framework release
+
 on: workflow_dispatch
+
 permissions:
   contents: write
+
 concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: macos-latest
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
 
+    name: "NOME A"
     steps:
-      - run: echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-      - run: echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-      # shell: bash
-
-      - name: Check out repository code
       - uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        with:
+          fetch-depth
+      # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: Build device release archive
         run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
@@ -34,7 +36,11 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
           fallback: v0.0.2
+
       - name: Attach ZIP to latest release
+        - run: echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+        - run: echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+        # shell: bash
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
