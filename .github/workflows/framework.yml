@@ -18,28 +18,23 @@ jobs:
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
 
-    name: "NOME A"
+    name: "Building and uploading asset"
     steps:
-      - uses: actions/checkout@v3
+      - name: ⬇️ Clonning ${{ github.repository }} repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
-      # - name: Build device release archive
-      #   run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+      - name: 🔨 Build device-release .xcarchive
+        run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-      # - name: Build device release xcframework
-      #   run: xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
+      - name: 📦 Build device-release .xcframework
+        run: xcodebuild -create-xcframework -framework "Archives/MyLibrary.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyLibrary.framework" -output Archives/xcframeworks/MyLibrary.xcframework
 
-      # - name: Create MyLibrary.xcframework.zip
-      #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
+      - name: 📂 Create .xcframework.zip
+        run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
-      # - name: Set environments
-      #   run: |
-      #     echo "RELEASE_NAME=UserBuild_$(date +"%m.%d.%Y_%H-%M")" >> $GITHUB_ENV
-      #     echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-
-      - name: Attach ZIP to latest release
+      - name: ⬆️ Upload xcframework.zip to latest release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -47,4 +42,4 @@ jobs:
           tag_name: ${{ github.ref_name }}
           draft: false
           prerelease: false
-          files: ./Archives/*
+          files: ./Archives/*.zip
