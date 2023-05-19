@@ -26,7 +26,7 @@ jobs:
         run: pod install --project-directory=Example
 
       - name: Add MyLibrarySpecs spec repo
-        run: pod repo add MyLibrarySpecs https://github.com/rafaelcrz/MyLibrarySpecs.git
+        run: pod repo add MyLibrarySpecs git@github.com:rafaelcrz/MyLibrarySpecs.git
 
       - name: Updating spec repository with .podspec
         run: pod repo push git@github.com:rafaelcrz/MyLibrarySpecs.git MyLibrary.podspec --allow-warnings
