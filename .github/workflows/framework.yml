@@ -18,7 +18,7 @@ jobs:
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
 
-    name: "Building and uploading asset"
+    name: "Create framework [upload spec repository -> build .xcarchive -> build -> .xcframework -> create -> xcframework.zip -> upload asset to last release]"
     steps:
       - name: ⬇️ Clonning ${{ github.repository }} repository
         uses: actions/checkout@v3
