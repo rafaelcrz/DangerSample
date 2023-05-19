@@ -3,7 +3,7 @@ name: Generate framework release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - '*.*.*'
 
 permissions:
   contents: write
