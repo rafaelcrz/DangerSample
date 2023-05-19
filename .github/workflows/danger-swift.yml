@@ -32,7 +32,10 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-            
+
+      - name: Validate .podspec
+        run: pod lib lint MyLibrary.podspec --sources=git@github.com:rafaelcrz/MyLibrarySpecs.git --allow-warnings --verbose      
+
       - name: Run tests
         run: xcodebuild clean test -scheme MyLibrary-Unit-Tests -workspace Example/MyLibrary.xcworkspace -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro' -derivedDataPath DerivedData/ -enableCodeCoverage YES | XCPRETTY_JSON_FILE_OUTPUT=result.json bundle exec xcpretty -f `bundle exec xcpretty-json-formatter`
 
