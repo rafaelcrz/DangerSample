@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: Updating spec repository with .podspec
-        run: pod repo push iOSWebViews.podspec --sources=git@github.com:netshoes/ios-specs.git --allow-warnings    
+        run: pod repo push MyLibrary.podspec --sources=git@github.com:rafaelcrz/MyLibrarySpecs.git --allow-warnings    
 
       - name: 🔨 Build device-release .xcarchive
         run: xcodebuild archive -scheme MyLibrary -destination "generic/platform=iOS" -configuration Release -archivePath "Archives/MyLibrary.framework-iphoneos.xcarchive" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
