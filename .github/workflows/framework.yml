@@ -30,11 +30,11 @@ jobs:
       # - name: Cocoapods
       #   run: pod install --project-directory=Example
 
-      - name: Add MyLibrarySpecs spec repo
-        run: pod repo add MyLibrarySpecs https://github.com/rafaelcrz/MyLibrarySpecs.git
+      # - name: Add MyLibrarySpecs spec repo
+      #   run: pod repo add MyLibrarySpecs https://github.com/rafaelcrz/MyLibrarySpecs.git
 
-      - name: Updating spec repository with .podspec
-        run: pod repo push MyLibrarySpecs MyLibrary.podspec --allow-warnings
+      # - name: Updating spec repository with .podspec
+      #   run: pod repo push MyLibrarySpecs MyLibrary.podspec --allow-warnings
         # run: pod repo push git@github.com:rafaelcrz/MyLibrarySpecs.git MyLibrary.podspec --allow-warnings
 
       - name: 🔨 Build device-release .xcarchive
