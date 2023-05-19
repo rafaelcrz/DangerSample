@@ -1,6 +1,9 @@
 name: Generate framework release
 
-on: workflow_dispatch
+on:
+  push:
+    tags:
+      - 'v*.*.*'
 
 permissions:
   contents: write
@@ -31,35 +34,17 @@ jobs:
       # - name: Create MyLibrary.xcframework.zip
       #   run: ditto -c -k --sequesterRsrc --keepParent Archives/xcframeworks/MyLibrary.xcframework Archives/MyLibrary.xcframework.zip
 
-      - name: Get Previous tag
-        id: previoustag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+      # - name: Set environments
+      #   run: |
+      #     echo "RELEASE_NAME=UserBuild_$(date +"%m.%d.%Y_%H-%M")" >> $GITHUB_ENV
+      #     echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+
+      - name: Attach ZIP to latest release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          fallback: v0.0.2
-
-      - name: Set environments
-        run: |
-          echo "RELEASE_NAME=UserBuild_$(date +"%m.%d.%Y_%H-%M")" >> $GITHUB_ENV
-          echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0
-        with:
-          versionSpec: '5.x'
-
-      - name: Tag
-        # if: startsWith(github.ref, 'refs/heads/release/')
-        run: |
-          git tag "v$steps.gitversion.outputs.GitVersion_SemVer"
-          git push origin "v$steps.gitversion.outputs.GitVersion_SemVer"
-
-      # - name: Attach ZIP to latest release
-      #   uses: softprops/action-gh-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     name: ${{ env.RELEASE_NAME }}
-      #     tag_name: ${{ env.TAG_NAME }}
-      #     draft: false
-      #     prerelease: false
-      #     files: ./Archives/*
+          tag_name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: ./Archives/*
