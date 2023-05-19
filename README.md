@@ -25,4 +25,4 @@ Rafael Felipe, rafael.felipe1989@gmail.com
 
 ## License
 
-MyLibrary is available under the MIT license. See the LICENSE file for more info.
+MyLibrary is available under the MIT license. See the LICENSE file for more info. 
