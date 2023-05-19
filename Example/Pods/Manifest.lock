@@ -1,6 +1,6 @@
 PODS:
-  - MyLibrary (0.1.0)
-  - MyLibrary/Tests (0.1.0)
+  - MyLibrary (1.0.0)
+  - MyLibrary/Tests (1.0.0)
 
 DEPENDENCIES:
   - MyLibrary (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MyLibrary: 4d5a534ec2d324e2609e68bdbfd23f74f7db8bcc
+  MyLibrary: 3ff143fa43f7186b1d49aa30430ab6d8f150622c
 
 PODFILE CHECKSUM: 2a5167802115d811ab4a9bfff0893c14efab3355
 
