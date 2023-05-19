@@ -22,6 +22,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 🔐 SSH agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_LIBRARY_CI_PRIVATE_KEY }}
+
       # - name: Cocoapods
       #   run: pod install --project-directory=Example
 
